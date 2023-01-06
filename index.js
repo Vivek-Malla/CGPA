@@ -196,6 +196,6 @@ app.post("/submit",function(req,res){
         res.render("result",{total : total});
 });
 
-app.listen(port, () =>{
-    console.log('Running successfully at localhost: ${port} ')
-});
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
+  });
