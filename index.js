@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+const PORT = process.env.PORT || 9000;
 const bp = require("body-parser");
 const { urlencoded } = require("body-parser");
 app.use(urlencoded({extended : true}));
@@ -196,6 +196,6 @@ app.post("/submit",function(req,res){
         res.render("result",{total : total});
 });
 
-app.listen(9000,function(req,res){
-    console.log("Running successfully at localhost:4343")
+app.listen(PORT, () =>{
+    console.log('Running successfully at localhost: ${PORT} ')
 });
