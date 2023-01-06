@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 9000;
+const port = process.env.port || 9000;
 const bp = require("body-parser");
 const { urlencoded } = require("body-parser");
 app.use(urlencoded({extended : true}));
@@ -11,7 +11,7 @@ app.set("view engine","ejs");
 
 
 app.get("/",function(req,res){
-    res.render("index");
+    res.render("home");
 });
 app.get("/submit",function(req,res){
     res.render("result");
@@ -196,6 +196,6 @@ app.post("/submit",function(req,res){
         res.render("result",{total : total});
 });
 
-app.listen(PORT, () =>{
-    console.log('Running successfully at localhost: ${PORT} ')
+app.listen(port, () =>{
+    console.log('Running successfully at localhost: ${port} ')
 });
